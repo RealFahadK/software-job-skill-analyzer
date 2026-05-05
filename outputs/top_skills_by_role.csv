@@ -1,0 +1,41 @@
+role_category,skill_name,posting_count
+AI/ML,Machine Learning,41
+AI/ML,Python,37
+AI/ML,Artificial Intelligence,19
+AI/ML,Java,16
+AI/ML,Software Engineering,14
+Backend,Python,434
+Backend,AWS,427
+Backend,Java,374
+Backend,Go,297
+Backend,SQL,271
+Data,Python,61
+Data,SQL,47
+Data,AWS,42
+Data,Java,41
+Data,Spark,20
+DevOps/Cloud,Python,91
+DevOps/Cloud,Kubernetes,79
+DevOps/Cloud,AWS,78
+DevOps/Cloud,Java,69
+DevOps/Cloud,Docker,65
+Frontend,JavaScript,187
+Frontend,React,167
+Frontend,HTML/CSS,126
+Frontend,TypeScript,104
+Frontend,Angular,77
+Full-Stack,JavaScript,439
+Full-Stack,AWS,419
+Full-Stack,Python,416
+Full-Stack,TypeScript,377
+Full-Stack,Java,369
+General Software,Python,2411
+General Software,Java,2147
+General Software,C++,1929
+General Software,JavaScript,1923
+General Software,C#,1642
+Mobile,Kotlin,124
+Mobile,Android,93
+Mobile,Agile,93
+Mobile,Git,85
+Mobile,Java,81
