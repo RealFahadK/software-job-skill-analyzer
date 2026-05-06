@@ -114,35 +114,27 @@ def main():
     print(f"Raw rows: {len(df)}")
     print(f"Raw columns: {list(df.columns)}")
 
-    # Standardize column names for easier coding.
     df = df.rename(columns={
         "job level": "job_level"
     })
 
-    # Basic cleaning.
     for col in df.columns:
         df[col] = df[col].apply(clean_text)
 
-    # Remove duplicate job links when available; otherwise remove duplicate title/company/location rows.
     if "job_link" in df.columns:
         df = df.drop_duplicates(subset=["job_link"])
     df = df.drop_duplicates(subset=["job_title", "company", "job_location", "job_summary"])
 
-    # Fill missing text fields.
     df["job_summary"] = df["job_summary"].fillna("")
     df["job_skills"] = df["job_skills"].fillna("")
 
-    # Parse dates safely.
     df["first_seen"] = pd.to_datetime(df["first_seen"], errors="coerce").dt.date.astype(str)
 
-    # Add role category.
     df["role_category"] = df["job_title"].apply(categorize_role)
 
-    # Normalize skill list into a pipe-separated format.
     df["normalized_skills"] = df["job_skills"].apply(lambda x: "|".join(split_and_normalize_skills(x)))
     df["skill_count"] = df["normalized_skills"].apply(lambda x: 0 if x == "" else len(x.split("|")))
 
-    # Keep useful columns.
     keep_cols = [
         "job_title", "company", "job_location", "job_link", "first_seen",
         "search_city", "search_country", "job_level", "job_type",

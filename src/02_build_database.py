@@ -99,7 +99,6 @@ def main():
 
     conn.commit()
 
-    # Print table counts for documentation/report.
     for table in ["companies", "locations", "skills", "jobs", "job_skills"]:
         cur.execute(f"SELECT COUNT(*) FROM {table}")
         print(f"{table}: {cur.fetchone()[0]} rows")
